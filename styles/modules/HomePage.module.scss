@@ -1,0 +1,25 @@
+@import '../breakpoints';
+
+.mainContainer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  height: 600px;
+
+  @media (max-width: $brMed) {
+    height: auto;
+    margin-top: 50px;
+  }
+}
+
+.mainContent {
+  height: calc(600px - 47px);
+  @media (max-width: $brMed) {
+    height: auto;
+  }
+}

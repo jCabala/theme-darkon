@@ -1,0 +1,39 @@
+@import '../colors';
+@import '../breakpoints';
+
+.nav {
+  display: flex;
+
+  * {
+    margin: 0 10px;
+  }
+
+  @media (max-width: $brMed) {
+    flex-direction: column;
+
+    * {
+      margin: 10px 0;
+    }
+  }
+}
+
+.navBtn {
+  background-color: transparent;
+  font-size: 1rem;
+  padding: 8px 40px;
+  border: 3px solid $font1;
+  border-radius: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border color 3s ease-in-out;
+}
+
+.navBtn:hover {
+  color: $primary;
+  border: 3px solid $primary;
+}
+
+.currentNavBtn {
+  border: 3px solid $primary;
+  color: $primary;
+}

@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800&display=swap');
+@import 'colors.scss';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: $font1;
+  letter-spacing: 1.5px;
+  font-family: 'Kanit', sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+}
+
+body {
+  background-color: $primaryBg;
+}
+
+p {
+  margin: 15px 0;
+  line-height: 1.8;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+img {
+  width: 100%;
+  border-radius: 10px;
+}
+

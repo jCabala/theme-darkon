@@ -1,0 +1,61 @@
+@import '../colors';
+
+.container {
+  width: 100% !important;
+  height: calc(100% - 10px) !important;
+  display: flex;
+  align-items: center;
+  border-radius: 22px;
+}
+
+//carousele
+.innerCarousele {
+  width: fit-content;
+  display: flex;
+  scroll-snap-align: start;
+}
+
+.carousele {
+  cursor: grab;
+  overflow: hidden;
+  max-width: 600px !important;
+}
+
+//item that looks like a smartphone
+.item {
+  position: relative;
+  min-height: 360px;
+  min-width: 220px;
+  margin: 40px;
+
+  border: 16px white solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+.item:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: $primary;
+  border-radius: 10px;
+}
+
+.item:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: $primary;
+  border-radius: 50%;
+}

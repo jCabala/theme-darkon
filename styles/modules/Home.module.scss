@@ -1,0 +1,30 @@
+@import '../colors';
+@import '../breakpoints';
+
+.container {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  h1 {
+    font-weight: 800;
+    font-size: 72px;
+    letter-spacing: 5px;
+    span {
+      color: $primary;
+    }
+  }
+
+  h2 {
+    font-weight: 500;
+    font-size: 25px;
+  }
+
+  * {
+    margin: 10px 0;
+  }
+}

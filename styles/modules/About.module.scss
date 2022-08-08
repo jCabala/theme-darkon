@@ -1,0 +1,88 @@
+@import '../colors';
+@import '../breakpoints';
+
+.imgWrapper {
+  z-index: -1;
+  height: 320px;
+  width: 320px;
+  position: relative;
+  .imgContainer {
+    height: 100%;
+    width: 100%;
+    border-radius: 50% !important;
+    position: absolute;
+    img {
+      height: 100%;
+      width: 100%;
+      border-radius: 50% !important;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+
+  @media (max-height: $brMed) {
+    height: 260px;
+    width: 260px;
+  }
+}
+
+.container {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flexLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-right: 30px;
+}
+
+.flexRight {
+  h3,
+  h1 {
+    text-align: center;
+    transition: all 0.5s linear;
+  }
+  max-width: 300px;
+  h3 {
+    border-bottom: 1px dotted $font1;
+    color: $primary;
+  }
+}
+
+//switch
+.switch {
+  width: 60px;
+  height: 30px;
+  background-color: $primary;
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 50px;
+  margin: 10px 0;
+  padding: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.handle {
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border-radius: 40px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.switchOn {
+  justify-content: flex-end !important;
+  background-color: $font1 !important;
+
+  .handle {
+    background-color: $primary;
+  }
+}
