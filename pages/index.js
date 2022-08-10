@@ -24,6 +24,7 @@ import CONFIG from '../data/config';
 function HomePage({ projects }) {
   const [currentPageName, setCurrentPageName] = useState('Home');
   const [modalOpen, setModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState(<></>);
 
   const handleOpenModal = () => {
     setModalOpen(true);
@@ -55,6 +56,7 @@ function HomePage({ projects }) {
             config={config}
             modalOpen={handleOpenModal}
             projects={projects}
+            handleModalContent={setModalContent}
           />
         );
         break;
@@ -72,7 +74,7 @@ function HomePage({ projects }) {
   return (
     <>
       <div className={styles.mainContainer}>
-        <main className={styles.mainContent}>{getPage()}</main>
+        <main>{getPage()}</main>
         <Navigation
           pages={CONFIG.pages}
           handleSetPage={handleSetPage}
@@ -85,7 +87,7 @@ function HomePage({ projects }) {
         onExitComplete={() => null}
       >
         {modalOpen && (
-          <Modal handleClose={handleCloseModal} text={'Modalisko'} />
+          <Modal handleClose={handleCloseModal} content={modalContent} />
         )}
       </AnimatePresence>
     </>
@@ -98,20 +100,17 @@ export async function getStaticProps() {
 
   // Get slug and frontmatter from projects
   const myProjects = files.map(filename => {
-    // Create slug
-    const slug = filename.replace('.md', '');
-
     // Get frontmatter
     const markdownWithMeta = fs.readFileSync(
       path.join('data', 'projects', filename),
       'utf-8'
     );
 
-    const { data: frontmatter } = matter(markdownWithMeta);
+    const { data: frontmatter, content } = matter(markdownWithMeta);
 
     return {
-      slug,
       frontmatter,
+      content,
     };
   });
 

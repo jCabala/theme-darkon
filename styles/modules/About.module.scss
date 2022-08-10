@@ -32,6 +32,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: $brMed) {
+    flex-direction: column;
+  }
 }
 
 .flexLeft {
@@ -46,12 +50,10 @@
 .flexRight {
   h3,
   h1 {
-    text-align: center;
     transition: all 0.5s linear;
   }
   max-width: 300px;
   h3 {
-    border-bottom: 1px dotted $font1;
     color: $primary;
   }
 }

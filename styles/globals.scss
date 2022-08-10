@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import 'colors.scss';
 
 * {
@@ -7,12 +7,13 @@
   padding: 0;
   color: $font1;
   letter-spacing: 1.5px;
-  font-family: 'Kanit', sans-serif;
+  font-family: 'Poppins', sans-serif;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
 }
 
 body {
   background-color: $primaryBg;
+  overflow-x: hidden;
 }
 
 p {

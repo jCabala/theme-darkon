@@ -2,12 +2,13 @@
 @import '../breakpoints';
 
 .container {
-  width: 100% !important;
-  height: 100% !important;
-
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: $brMed) {
+    flex-direction: column;
+  }
 
   form {
     h2 {
@@ -22,7 +23,7 @@
       padding: 10px;
 
       @media (max-width: $brMed) {
-        width: 100%;
+        width: 85vw;
       }
 
       textarea,
@@ -53,8 +54,6 @@
 
 .contactData {
   background-color: $primary;
-  min-width: 200px;
-  min-height: 400px;
   padding: 20px;
   margin: 10px;
   border-radius: 16px;
@@ -72,6 +71,10 @@
     margin: 12px 0;
     padding: 10px;
     border-radius: 16px;
+  }
+
+  @media (max-width: $brMed) {
+    width: 85vw;
   }
 
   * {
